@@ -28,7 +28,7 @@ const [count, setCount] = useState("")
   return (
     <Main>
          
-       <div className="calculator-display">{count} <span></span></div>
+       <div className="calculator-display">{count}</div>
        <div className="calculator-numbers" >{calculatorBtn}</div>
 
     </Main>
