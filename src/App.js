@@ -1,25 +1,62 @@
-import logo from './logo.svg';
+
+
 import './App.css';
+import React,  {useState} from 'react';
+import { evaluate } from 'mathjs';
 
 function App() {
+
+const [count, setCount] = useState("")
+
+  const numberBtn = [7, 8, 9, "/",4, 5, 6, "*",1, 2, 3, "-",0, ".", "+", "=","c" ] ;
+
+  const clickHandler = button => {
+    if (button === "="){
+      setCount( evaluate(count))
+      
+    }else if(button ==="c"){
+      setCount("")
+    }else{setCount( count+ ""+button  )
+
+    }
+   
+    };
+  const calculatorBtn = numberBtn.map((button , index ) =>{
+     if (index < 17) 
+     {return <button className ="btn" key={index}  onClick={() => clickHandler(button)} >{button}</button>}
+  })
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main>
+         
+       <div className="calculator-display">{count} <span></span></div>
+       <div className="calculator-numbers" >{calculatorBtn}</div>
+
+    </Main>
+
+
   );
 }
+// const Button = props => {
+//   return <button onClick={props.click}>{props.label}</button>;
+//  };
+
+const Main = ({children}) =>{
+
+  return <div className="App">{children}</div>
+};
+
+// const Display = () =>{
+
+//   return <div className="calculator-display">{count}</div>
+// };
+
+
+
+
+
 
 export default App;
+
+
+

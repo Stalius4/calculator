@@ -1,38 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr ;
+  grid-template-rows:3px 1.2fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    " . . . . "
+    "nav nav nav  nav"
+    "main main main  main"
+    "main main main  main"
+    "main main main  main"
+    "main main main  main"
+    "main main main  main";
+  grid-gap: 1rem;
+  position: relative;
+  margin: auto;
+  width: 503px;
+  height: 600px;
+  background-color: rgb(173, 132, 71);
+border-radius: 30px;
   text-align: center;
+  /* border: black solid 1px; */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;}
+
+.calculator-display {
+ 
+  grid-area: nav;
+ width: 455px;
+  background-color: rgb(219, 227, 227);
+  border-radius: 5px;
+  border: black solid 2px;
+  justify-self: center;
+  font-size: 70px;
+  text-align: right;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator-numbers{
+  grid-area: main;
+  justify-self:stretch
+
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn{
+  background-image: linear-gradient(#464d55, #25292e);
+  width: 100px;
+  color: #fff;
+  height: 70px;
+  font-size: 18px ;
+  margin:10px;
+  border-radius: 15px;
+  font-family: 'Radio Canada', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+.btn:hover {
+  box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+  filter: brightness(0.9);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete{
+  background-image: linear-gradient(#973c2a, #e7210b);
+  width: 100px;
+  color: #fff;
+  height: 70px;
+  font-size: 18px ;
+  margin:10px;
+  border-radius: 15px;
+  font-family: 'Radio Canada', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
