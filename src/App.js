@@ -21,9 +21,8 @@ const [count, setCount] = useState("")
     }
    
     };
-  const calculatorBtn = numberBtn.map((button , index ) =>{
-     if (index < 17) 
-     {return <button className ={button ==="c" ? "cBtn" : "btn"} key={index}  onClick={() => clickHandler(button)} >{button}</button>}
+  const calculatorBtn = numberBtn.map((button , index ) =>{    
+     return (<button className ={button ==="c" ? "cBtn" : "btn"} key={index}  onClick={() => clickHandler(button)} >{button}</button>)
   })
   
   return (
