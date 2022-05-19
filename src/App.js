@@ -36,22 +36,11 @@ const [count, setCount] = useState("")
 
   );
 }
-// const Button = props => {
-//   return <button onClick={props.click}>{props.label}</button>;
-//  };
 
 const Main = ({children}) =>{
 
   return <div className="App">{children}</div>
 };
-
-// const Display = () =>{
-
-//   return <div className="calculator-display">{count}</div>
-// };
-
-
-
 
 
 
